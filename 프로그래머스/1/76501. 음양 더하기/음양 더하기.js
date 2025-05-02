@@ -1,7 +1,3 @@
 function solution(absolutes, signs) {
-    let sum = 0;
-    for(let i=0; i < absolutes.length; i++){
-        signs[i] ? sum += absolutes[i] : sum -= absolutes[i];
-    }
-    return sum;
+    return absolutes.reduce((acc, cur, i) => acc + (signs[i] ? cur : -cur),0);
 }
